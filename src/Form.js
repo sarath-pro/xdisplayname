@@ -8,7 +8,6 @@ export default function Form() {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          console.log(event);
           setFullName(
             event.target["first-name"].value +
               " " +
@@ -23,12 +22,10 @@ export default function Form() {
         <input type="text" id="last-name" name="last-name" required></input>
         <br />
         <button type="submit">Submit</button>
-        {fullName.length > 0 && (
-          <div>
-            <p>Full Name: {fullName}</p>
-          </div>
-        )}
       </form>
+      {fullName.length > 0 && (
+            <p>Full Name: {fullName}</p>
+        )}
     </div>
   );
 }
